@@ -60,11 +60,22 @@ the user will have basic information of his situation like expense vs income. gr
 
 ## app look
 ### overview
-### category creation
-### tag creation
-### expense
+![frontpage](images/overview.png)
 ### filters
+![frontpage](images/details-categories.png)
+![frontpage](images/details-subcategories.png)
+![frontpage](images/filter.png)
+### expense
+![frontpage](images/create_expense.png)
+![frontpage](images/edit_expense.png)
+### category creation
+![frontpage](images/create_category.png)
+![frontpage](images/edit_categories.png)
+### tag creation
+![frontpage](images/create_tag.png)
+
 ### accounts
+### login
 
 ## DB schema
 ### categories
@@ -73,6 +84,7 @@ the user will have basic information of his situation like expense vs income. gr
 ### accounts
 ### user
 ### connect
+### currency
 
 
 ## program architecture
