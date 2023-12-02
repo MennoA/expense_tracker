@@ -104,12 +104,15 @@ the user will have basic information of his situation like expense vs income. gr
 - account: int foreign key
 - category: int foreign key
 - subcat: int foreign key
+- tag: int foreign key
+- cur: int foreign key
 - description: varchar(200)
 - image: blob
 
 ### accounts
 - id: int unique
 - holder: int foreign key
+- amount: int
 ### user
 - id: int unique
 - username: varchar(50)
@@ -119,6 +122,9 @@ the user will have basic information of his situation like expense vs income. gr
 - id : int unique
 - currency: varchar(3)
 - fullname: varchar(50) 
+
+## class diagramm
+
 
 ## program architecture
 
