@@ -124,7 +124,7 @@ the user will have basic information of his situation like expense vs income. gr
 - fullname: varchar(50) 
 
 ## class diagramm
-
+![frontpage](images/diagram_class.png)
 
 ## program architecture
 
