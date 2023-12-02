@@ -84,13 +84,41 @@ the user will have basic information of his situation like expense vs income. gr
 
 ## DB schema
 ### categories
-### expense
+- id:int unique
+- name:varchar(50)
+- subcategory: bool
+- parent: int foreign key
+- description: varchar(500)
+- image: blob
 ### tag
-### accounts
-### user
-### connect
-### currency
+- id:int unique
+- name: varchar(50)
+- color: ?
+- description: varchar(200)
+### expense
+- id:int unique
+- name: varchar(50)
+- date: datetime
+- amount: int
+- income: bool
+- account: int foreign key
+- category: int foreign key
+- subcat: int foreign key
+- description: varchar(200)
+- image: blob
 
+### accounts
+- id: int unique
+- holder: int foreign key
+### user
+- id: int unique
+- username: varchar(50)
+- password: varchar(50) hash
+
+### currency
+- id : int unique
+- currency: varchar(3)
+- fullname: varchar(50) 
 
 ## program architecture
 
