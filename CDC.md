@@ -77,6 +77,11 @@ the user will have basic information of his situation like expense vs income. gr
 ### accounts
 ### login
 
+## navigation
+![frontpage](images/navigation.png)
+
+
+
 ## DB schema
 ### categories
 ### expense
