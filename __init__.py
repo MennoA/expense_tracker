@@ -34,6 +34,9 @@ def create_app(test_config=None):
     app.register_blueprint(overview.bp)
     app.add_url_rule('/', endpoint='index')
 
+    from . import expense
+    app.register_blueprint(expense.bp)
+
     from . import account
     app.register_blueprint(account.bp)
     
