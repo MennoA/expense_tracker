@@ -38,7 +38,7 @@ CREATE TABLE categories (
 CREATE TABLE tag (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT UNIQUE NOT NULL ,
-    color,
+    color TEXT NOT NULL,
     description TEXT
 );
 
