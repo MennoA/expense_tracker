@@ -69,9 +69,11 @@ the user will have basic information of his situation like expense vs income. gr
 ![frontpage](images/create_expense.png)
 ![frontpage](images/edit_expense.png)
 ### category creation
+should have an intermediate page to manage : category where you create, edit, delete categories 
 ![frontpage](images/create_category.png)
 ![frontpage](images/edit_categories.png)
 ### tag creation
+same for tag
 ![frontpage](images/create_tag.png)
 
 ### accounts
