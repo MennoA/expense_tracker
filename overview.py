@@ -20,10 +20,13 @@ def index():
 
     # limit to 10
     last_expenses = db.execute(
-        'SELECT p.id, name, body, created, author_id, username'
-        ' FROM post p JOIN user u ON p.author_id = u.id'
-        ' ORDER BY created DESC'
+        'SELECT e.name, e.date, e.amount, e.cur, e.tag, e.income '
+        'FROM expense e JOIN account a ON a.id = e.account '
+        'JOIN user u ON u.id = a.holder '
+        'ORDER BY e.date DESC '
+        'LIMIT 10' 
     ).fetchall()
+    print(last_expenses)
     return render_template('overview/index.html', expenses=last_expenses)
 
 

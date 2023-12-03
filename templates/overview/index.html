@@ -1,0 +1,46 @@
+{% extends 'triple_content.html' %}
+
+{% block header %}
+  <h1>{% block title %}Overview{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+<p>overview content</p>
+
+{% endblock%}
+
+{% block content2 %}
+<p>here should stand graph</p>
+{% endblock%}
+
+{% block content3 %}
+    <h3>last transactions</h3>
+    {% for expense in expenses %}
+        <div>
+            <p>{{ expense['name'] }}</p>
+            <p>{{ expense['date'] }}</p>
+            <p>{{ expense['amount'] }}</p>
+            <p>{{ expense['income'] }}</p>
+            <p>{{ expense['cur'] }}</p>
+            <p>{{ expense['tag'] }}</p>
+        </div>
+    {% endfor %}
+
+    <section>
+        <div>
+            <form action="{{ url_for('expense.create') }}" method="get">
+                <input type="submit" value="expense">
+            </form>
+        </div>
+        <div>
+            <form action="{{ url_for('categories.init') }}", method="get">
+                <input type="submit" value="category">
+            </form>
+        </div>
+        <div>
+            <form action="{{ url_for('tag.init') }}", method="get">
+                <input type="submit" value="tag">
+            </form>
+        </div>
+    </section>
+{% endblock %}

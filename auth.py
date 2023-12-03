@@ -33,6 +33,26 @@ def register():
             except db.IntegrityError:
                 error = f"User {username} is already registered."
             else:
+                user_id = db.execute('SELECT id from user WHERE username = ?', (username,),).fetchone()
+                try:
+                    db.execute(
+                        "INSERT INTO categories (name, description, user) VALUES ('None', 'Default value', ?)",
+                        (user_id),
+                    )
+                    db.commit()
+                    db.execute(
+                        "INSERT INTO tag (name, color, user, description) VALUES ('Default','FFFFFF', ?, 'Default value')",
+                        (user_id,),
+                    )
+                    db.commit()
+                    db.execute(
+                        "INSERT INTO account (holder, name, amount) VALUES (?, 'Main account', 0)",
+                        (user_id,),
+                    )
+                    db.commit()
+                except db.IntegrityError:
+                    error = f"There was an error during the initialization of {username}."
+                
                 return redirect(url_for("auth.login"))
 
         flash(error)

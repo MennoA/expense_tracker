@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<h1>{% block title %}new expense{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+<form method="post">
+    <label for="name">Name</label>
+    <input name="name" id="name" value="{{ request.form['name'] }}" required>
+    <label for="date">Date</label>
+    <input name="date" id="date" type="date" value="{{ request.form['date'] }}" required>
+    <label for="category">Category</label>
+    <select name="category" id="category" value="">
+        {% for cat in categories %}
+        <option value="{{ cat['name'] }}">{{ cat['name'] }}</option>
+        {% endfor %}
+    </select>
+    <label for="subcat">Subcategory</label>
+    <select name="subcat" id="subcat" value="">
+        {% for cat in subcategories %}
+        <option value="{{ cat['name'] }}">{{ cat['name'] }}</option>
+        {% endfor %}
+    </select>
+    <label for="tag">Tag</label>
+    <select name="tag" id="tag" value="">
+        {% for tag in tags %}
+        <option value="{{ tag['name'] }}">{{ tag['name'] }}</option>
+        {% endfor %}
+    </select>
+    <label for="income">Income</label>
+    <input name="income" id="income" type="checkbox">
+    <label for="amount">Amount</label>
+    <input name="amount" id="amount" value="{{ request.form['amount'] }}" required>
+    <label for="currency">Currency</label>
+    <select name="currency" id="currency" value="">
+        {% for cur in currencies %}
+        <option value="{{ cur['currency'] }}">{{ cur['currency'] }}</option>
+        {% endfor %}
+    </select>
+    <label for="account">Account</label>
+    <select name="account" id="account" value="">
+        {% for account in accounts %}
+        <option value="{{ account['name'] }}">{{ account['name'] }}</option>
+        {% endfor %}
+    </select>
+    <label for="description">Description</label>
+    <textarea name="description" id="description">{{ request.form['description'] }}</textarea>
+    <input type="submit" value="Save">
+    <input type="submit" value="Cancel">
+</form>
+{% endblock %}
