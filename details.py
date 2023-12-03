@@ -7,3 +7,9 @@ from expense_tracker.auth import login_required
 from expense_tracker.db import get_db
 
 bp = Blueprint('details', __name__)
+
+# init
+
+# go to category detail
+
+# filter

@@ -30,4 +30,23 @@ def create_app(test_config=None):
     from . import auth
     app.register_blueprint(auth.bp)
 
+    from . import overview
+    app.register_blueprint(overview.bp)
+    app.add_url_rule('/', endpoint='index')
+
+    from . import account
+    app.register_blueprint(account.bp)
+    
+    from . import categories
+    app.register_blueprint(categories.bp)
+    
+    from . import tag
+    app.register_blueprint(tag.bp)
+    
+    from . import details
+    app.register_blueprint(details.bp)
+    
+    from . import transactionsdetails
+    app.register_blueprint(transactionsdetails.bp)
+    
     return app

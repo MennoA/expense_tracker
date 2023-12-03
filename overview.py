@@ -28,22 +28,16 @@ def index():
 
 # go to graph
 
-# create account
-
-# edit account
+# go to account
 
 # select account
 
 # filter date
 
-# go to filter
+# go to details
 
 # create expense/income
 
-# create category
+# go to category
 
-# edit category
-
-# create tag
-
-# edit tag
+# go to tag

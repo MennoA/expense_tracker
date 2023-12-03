@@ -7,3 +7,11 @@ from expense_tracker.auth import login_required
 from expense_tracker.db import get_db
 
 bp = Blueprint('transactionsdetails', __name__)
+
+# init
+
+# filter
+
+# edit transactions
+
+# delete transactions
