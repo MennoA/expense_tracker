@@ -129,4 +129,14 @@ the user will have basic information of his situation like expense vs income. gr
 ## program architecture
 
 
+## chart
+
+- line graph: to see the overall fortune
+
+- bar graph, column chart : visualize spending/earning
+
+- pie chart: for difference between spending by categories
+
+- bullet graph: for objective goal (not yet but an idea)
+
 
