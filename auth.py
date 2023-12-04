@@ -34,20 +34,21 @@ def register():
                 error = f"User {username} is already registered."
             else:
                 user_id = db.execute('SELECT id from user WHERE username = ?', (username,),).fetchone()
+                print(user_id['id'])
                 try:
                     db.execute(
                         "INSERT INTO categories (name, description, user) VALUES ('None', 'Default value', ?)",
-                        (user_id),
+                        (user_id['id'],),
                     )
                     db.commit()
                     db.execute(
                         "INSERT INTO tag (name, color, user, description) VALUES ('Default','FFFFFF', ?, 'Default value')",
-                        (user_id,),
+                        (user_id['id'],),
                     )
                     db.commit()
                     db.execute(
                         "INSERT INTO account (holder, name, amount) VALUES (?, 'Main account', 0)",
-                        (user_id,),
+                        (user_id['id'],),
                     )
                     db.commit()
                 except db.IntegrityError:

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}New Post{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <form method="post">
+    <label for="name">Name</label>
+    <input name="name" id="name" value="{{ request.form['name'] }}" required>
+    <label for="subcat">Subcategories</label>
+    <input type="checkbox" name="subcat" id="subcat" value="{{ request.form['subcat'] }}">
+    <label for="parent">Parent</label>
+    <input name="parent" id="parent" value="{{ request.form['parent'] }}">
+    <label for="description">Description</label>
+    <textarea name="description" id="description">{{ request.form['description'] }}</textarea>
+    <input type="submit" value="Create">
+  </form>
+{% endblock %}

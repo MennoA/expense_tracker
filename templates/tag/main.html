@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Tags{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+    <div>
+        <form action="{{ url_for('tags.create') }}" method="get">
+            <input type="submit" value="category">
+        </form>
+    </div>
+    <div>
+        <form action="{{ url_for('tags.edit') }}", method="get">
+            <input type="submit" value="category">
+        </form>
+    </div>
+    <div>
+    </div>
+{% endblock %}

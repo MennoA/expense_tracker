@@ -10,15 +10,11 @@ from expense_tracker.utils import get_tags
 bp = Blueprint('tag', __name__)
 
 # init
-@bp.route('/init')
+@bp.route('/main')
 @login_required
-def init():
+def main():
     db = get_db()
-
-    user_id = session.get('user_id')
-
-    tags = get_tags()
-    return render_template('categories/main.html', tags=tags)
+    return render_template('tag/main.html', tags=get_tags())
 # select tag
 
 # create tag

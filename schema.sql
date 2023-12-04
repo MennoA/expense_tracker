@@ -27,7 +27,7 @@ CREATE TABLE expense (
 
 CREATE TABLE categories (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
-  name TEXT UNIQUE NOT NULL,
+  name TEXT NOT NULL,
   subcat BOOLEAN NOT NULL,
   parent INTEGER,
   description TEXT,
@@ -39,7 +39,7 @@ CREATE TABLE categories (
 
 CREATE TABLE tag (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    name TEXT UNIQUE NOT NULL ,
+    name TEXT NOT NULL ,
     color TEXT NOT NULL,
     user INTEGER NOT NULL,
     description TEXT,
